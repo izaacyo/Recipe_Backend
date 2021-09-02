@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use cymApp\Repository\RecipesRepository;
+use App\Repository\RecipesRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**

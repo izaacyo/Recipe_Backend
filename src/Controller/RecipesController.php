@@ -8,12 +8,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class RecipesController extends AbstractController
 {
-    #[Route('/recipes', name: 'recipes')]
-    public function index(): Response
-    {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/RecipesController.php',
-        ]);
+    /**
+     * @Route ("/recipe/add" , name="add_recipe")
+     */
+    public function addRecipe(){
+
+        return new Response('trying to add');
+
     }
 }
