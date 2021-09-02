@@ -66,7 +66,7 @@ class RecipesController extends AbstractController
      */
 
     public function findRecipe($id) {
-        $recipe = $this->getDoctrine()->getRepository(Recipe::class)->find($id);
+        $recipe = $this->getDoctrine()->getRepository(Recipes::class)->find($id);
 
         if(!$recipe) {
             throw $this->createNotFoundException(
@@ -90,7 +90,7 @@ class RecipesController extends AbstractController
      */
     public function editRecipe($id, $name) {
         $entityManager = $this->getDoctrine()->getManager();
-        $recipe = $this->getDoctrine()->getRepository(Recipe::class)->find($id);
+        $recipe = $this->getDoctrine()->getRepository(Recipes::class)->find($id);
 
         if(!$recipe) {
             throw $this->createNotFoundException(
@@ -111,7 +111,7 @@ class RecipesController extends AbstractController
      */
     public function removeRecipe($id) {
         $entityManager = $this->getDoctrine()->getManager();
-        $recipe = $this->getDoctrine()->getRepository(Recipe::class)->find($id);
+        $recipe = $this->getDoctrine()->getRepository(Recipes::class)->find($id);
 
         if (!$recipe) {
             throw $this->createNotFoundException(
