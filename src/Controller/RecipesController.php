@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Entity\Recipes;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Flex\Recipe;
@@ -16,10 +17,11 @@ class RecipesController extends AbstractController
      * @Route("/recipe/add", name="add_new_recipe", methods={"POST"})
      */
 
-    public function addRecipe( $request ) {
+    public function addRecipe(Request $request)
+    {
         $entityManager = $this->getDoctrine()->getManager();
 
-        $data= json_decode($request->getContent(),true);
+        $data = json_decode($request->getContent(), true);
 
         $newRecipe = new Recipes();
         $newRecipe->setName($data["name"]);
@@ -41,12 +43,13 @@ class RecipesController extends AbstractController
      * @Route("/recipe/all", name="get_all_recipe", methods={"GET"})
      */
 
-    public function getAllRecipe() {
+    public function getAllRecipe()
+    {
         $recipes = $this->getDoctrine()->getRepository(Recipe::class)->findAll();
 
         $response = [];
 
-        foreach($recipes as $recipe) {
+        foreach ($recipes as $recipe) {
             $response[] = array(
                 'name' => $recipe->getName(),
                 'time' => $recipe->getTime(),
@@ -57,4 +60,5 @@ class RecipesController extends AbstractController
             );
         }
         return $this->json($response);
+    }
 }
