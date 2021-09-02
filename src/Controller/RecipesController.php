@@ -45,7 +45,7 @@ class RecipesController extends AbstractController
 
     public function getAllRecipe()
     {
-        $recipes = $this->getDoctrine()->getRepository(Recipe::class)->findAll();
+        $recipes = $this->getDoctrine()->getRepository(Recipes::class)->findAll();
 
         $response = [];
 
