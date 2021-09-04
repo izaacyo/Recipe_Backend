@@ -128,8 +128,9 @@ class Recipes
 
         return $this;
     }
+}
 
-    public function getImage(): ?string
+ /*   public function getImage(): ?string
     {
         return $this->image;
     }
@@ -140,4 +141,5 @@ class Recipes
 
         return $this;
     }
-}
+}*/
+
