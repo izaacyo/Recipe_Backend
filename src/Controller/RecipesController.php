@@ -62,7 +62,7 @@ class RecipesController extends AbstractController
                 'portions' => $recipe->getPortions(),
                 'ingredients' => $recipe->getIngredients(),
                 'instructions' => $recipe->getInstructions(),
-                'image' => $recipe->getImage()
+             //   'image' => $recipe->getImage()
             );
         }
         return $this->json($response);
@@ -87,7 +87,7 @@ class RecipesController extends AbstractController
                 'portions' => $recipe->getPortions(),
                 'ingredients'=> $recipe->getIngredients(),
                 'instructions'=>$recipe->getInstructions(),
-                'image'=>$recipe->getImage()
+             //   'image'=>$recipe->getImage()
             ]);
         }
     }
