@@ -33,7 +33,7 @@ class RecipesController extends AbstractController
         $newRecipe->setPortions($data["portions"]);
         $newRecipe->setIngredients($data["ingredients"]);
         $newRecipe->setInstructions($data["instructions"]);
-        //$newRecipe->setImage($data["image"]);
+        $newRecipe->setImage($data["image"]);
 
 
         $entityManager->persist($newRecipe);
@@ -62,7 +62,7 @@ class RecipesController extends AbstractController
                 'portions' => $recipe->getPortions(),
                 'ingredients' => $recipe->getIngredients(),
                 'instructions' => $recipe->getInstructions(),
-             //   'image' => $recipe->getImage()
+                'image' => $recipe->getImage()
             );
         }
         return $this->json($response);
@@ -87,7 +87,7 @@ class RecipesController extends AbstractController
                 'portions' => $recipe->getPortions(),
                 'ingredients'=> $recipe->getIngredients(),
                 'instructions'=>$recipe->getInstructions(),
-             //   'image'=>$recipe->getImage()
+                'image'=>$recipe->getImage()
             ]);
         }
     }
