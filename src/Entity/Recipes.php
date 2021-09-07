@@ -2,14 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\RecipeRepository;
+use App\Repository\RecipesRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-
 /**
- * @ORM\Entity(repositoryClass=RecipeRepository::class)
+ * @ORM\Entity(repositoryClass=RecipesRepository::class)
  */
-class Recipe
+class Recipes
 {
     /**
      * @ORM\Id
@@ -29,7 +28,7 @@ class Recipe
     private $time;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=255)
      */
     private $difficulty;
 
@@ -49,7 +48,7 @@ class Recipe
     private $instructions = [];
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image;
 
@@ -135,7 +134,7 @@ class Recipe
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
 
