@@ -3,7 +3,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Recipez;
+use App\Entity\Recipes;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,7 +26,7 @@ class RecipesController extends AbstractController
 
         $data = json_decode($request->getContent(), true);
 
-        $newRecipe = new Recipez();
+        $newRecipe = new Recipes();
         $newRecipe->setName($data["name"]);
         $newRecipe->setTime($data["time"]);
         $newRecipe->setDifficulty($data["difficulty"]);
@@ -49,7 +49,7 @@ class RecipesController extends AbstractController
 
     public function getAllRecipe()
     {
-        $recipes = $this->getDoctrine()->getRepository(Recipez::class)->findAll();
+        $recipes = $this->getDoctrine()->getRepository(Recipes::class)->findAll();
 
         $response = [];
 
@@ -72,7 +72,7 @@ class RecipesController extends AbstractController
      */
 
     public function findRecipe($id) {
-        $recipe = $this->getDoctrine()->getRepository(Recipez::class)->find($id);
+        $recipe = $this->getDoctrine()->getRepository(Recipes::class)->find($id);
 
         if(!$recipe) {
             throw $this->createNotFoundException(
@@ -97,7 +97,7 @@ class RecipesController extends AbstractController
      */
     public function editRecipe($id, $name) {
         $entityManager = $this->getDoctrine()->getManager();
-        $recipe = $this->getDoctrine()->getRepository(Recipez::class)->find($id);
+        $recipe = $this->getDoctrine()->getRepository(Recipes::class)->find($id);
 
         if(!$recipe) {
             throw $this->createNotFoundException(
@@ -118,7 +118,7 @@ class RecipesController extends AbstractController
      */
     public function removeRecipe($id) {
         $entityManager = $this->getDoctrine()->getManager();
-        $recipe = $this->getDoctrine()->getRepository(Recipez::class)->find($id);
+        $recipe = $this->getDoctrine()->getRepository(Recipes::class)->find($id);
 
         if (!$recipe) {
             throw $this->createNotFoundException(
