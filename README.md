@@ -1,6 +1,6 @@
 # Salads&Smiles Backend Server
 
-- Saladas&Smile's https://github.com/izaacyo/SaladsSmiles_client backend is written in this repo. This project was a part of the PHP course teached in Business College Helsinki as a part of the Software Developer Program.
+- Saladas&Smile's [Client](https://github.com/izaacyo/SaladsSmiles_client) backend is written in this repo. This project was a part of the PHP course teached in Business College Helsinki as a part of the Software Developer Program.
 
 ## Technologies used
 
