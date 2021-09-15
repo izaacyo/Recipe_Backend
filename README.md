@@ -8,6 +8,7 @@ Build with:
 
 - PHP
 - Simfony
+- PostgreSQL
 - Postman
 
 Hosted on: 
