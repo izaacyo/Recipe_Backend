@@ -13,7 +13,7 @@ Build with:
 
 Hosted on: 
 
--Heroku
+-Heroku initially, now on Render
 
 
 ## Setup and usage
@@ -22,7 +22,6 @@ Hosted on:
 
 3. Install Symfony  ``` composer install ```
 
-4. Install Heroku  ``` brew tap heroku/brew && brew install heroku  ```
 
 
 ## Sources
